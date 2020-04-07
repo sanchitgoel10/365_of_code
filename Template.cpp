@@ -10,8 +10,9 @@ using namespace std;
 #define inf 1e18
 #define ff first
 #define ss second
-
+#define for(i,a,b) for(int i=a;i<b;i++)
 
 int32_t main() {
 	return 0;
 }
+
