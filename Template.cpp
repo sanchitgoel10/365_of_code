@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 #define FastRead ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+#define endl '\n'
 #define int long long int
 #define pb push_back
 #define mp make_pair
@@ -16,6 +17,7 @@ using namespace std;
 #define For(i,a,b) for(int i=a;i<b;i++)
 
 int32_t main(){
+	cout<<1<<endl;
 	return 0;
 }
 
