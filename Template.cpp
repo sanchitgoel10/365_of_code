@@ -17,7 +17,7 @@ using namespace std;
 #define For(i,a,b) for(int i=a;i<b;i++)
 
 int32_t main(){
-	cout<<1<<endl;
+	FastRead;
 	return 0;
 }
 
