@@ -18,7 +18,14 @@ using namespace std;
 
 int32_t main(){
 	FastRead;
-	
+	int t;
+	cin>>t;
+	while(t--){
+	    int n;
+	    cin>>n;
+	    int x=n/2;
+	    cout<<n-x-1<<endl;
+	}
 	return 0;
 }
 
