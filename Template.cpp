@@ -7,6 +7,7 @@ using namespace std;
 #define mp make_pair
 #define pii pair<int,int>
 #define mii map<int,int>
+#define set set<int>
 #define vec vector<int>
 #define pq priority_queue <int>
 #define pqr priority_queue <int, vector<int>, greater<int>>
