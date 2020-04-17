@@ -23,6 +23,10 @@ char g[1001][1001];
 int visited[1001][1001];
 int dist[1001][1001];
 
+
+//again dual bfs
+
+
 bool ing(int x,int y,int c,int r){
     if(x>-0&&x<r&&y>=0&&y<c)return 1;
     return 0;
