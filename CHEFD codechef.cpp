@@ -14,107 +14,73 @@ So total time complexity is O(t) * 30 * (M + N) + Time required to change the da
 Now, if t = O(log N), then we are done.
 
 */
-
-#include<iostream>
-#include<bits/stdc++.h>
-#include <cmath>
-#include <cstdio>
-#include<algorithm>
-#define vi vector<int>
-#define vvi vector<vector<int> >
-#define vpi vector<pair<int,int> >
-#define all(c) c.begin(), c.end() 
-#define fr(type,i,n) for(type i=0;i<n;i++)
-#define sz(a) int((a).size()) 
-#define ll long long int
-#define ull unsigned long long
-#define tr(c,it) for(typeof((c).begin()) (it) = (c).begin();(it)!=(c).end();(it)++)
+#include <bits/stdc++.h>
+using namespace std;
+#define FastRead ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+#define endl '\n'
+#define int long long int
 #define pb push_back
 #define mp make_pair
-#define MOD 1000000007
-#define pi 3.1415926535897932384626433832795
-#define endl "\n"
-using namespace std;
+#define pii pair<int,int>
+#define mii map<int,int>
+#define set set<int>
+#define vec vector<int>
+#define pq priority_queue <int>
+#define pqr priority_queue <int, vector<int>, greater<int>>
+#define mod 1000000007
+#define inf 1e18
+#define ff first
+#define ss second
+#define For(i,a,b) for(int i=a;i<b;i++)
 
-int main()
-{
-	ios_base::sync_with_stdio(0);
-	cin.tie(0);
-	
-	int n;
+int32_t main(){
+	FastRead;
+	int n,m;
 	cin>>n;
-	
-	vector<ull> vec;
-	set<int> myset[6];
-	ull temp;
-	
-	fr(int,i,n)
-	{
-			cin>>temp;
-			vec.pb(temp);
-			if(temp%2 == 0)
-				myset[2].insert(i);
-			if(temp%3 == 0)
-				myset[3].insert(i);
-			if(temp%5 == 0)
-				myset[5].insert(i);
-	}
-	
-	int m;
+	int arr[n];
+	For(i,0,n)cin>>arr[i];
 	cin>>m;
-	while(m--)
-	{
-		int type;
-		cin>>type;
-		if(type==1)
-		{
-			int l,r,p;
-			cin>>l>>r>>p;
-			set<int>::iterator a= lower_bound(myset[p].begin(), myset[p].end(), l-1);
-			
-			vi del;
-			
-			for(set<int>::iterator it = a;it!=myset[p].end();it++)
-			{
-					if(*it>r-1)
-						break; //since sorted
-						
-					vec[*it]/=p;
-					if(vec[*it]%p)
-						del.pb(*it);
-			}
-			
-			for(vi::iterator it=del.begin();it!=del.end();it++)
-				myset[p].erase(*it);
-		}
-		else
-		{
-			int l,d;
-			cin>>l>>d;
-			
-			if(vec[l-1] % 2==0)
-				myset[2].erase(l-1);
-				
-			if(vec[l-1] % 3==0)
-				myset[3].erase(l-1);
-				
-			if(vec[l-1] % 5==0)
-				myset[5].erase(l-1);
-				
-			if(d%2==0)
-				myset[2].insert(l-1);
-			
-			if(d%3==0)
-				myset[3].insert(l-1);
-				
-			if(d%5==0)
-				myset[5].insert(l-1);
-				
-			vec[l-1] = d;
-		}
+	set myset[6];
+	For(i,0,n){
+	    if(arr[i]%2==0) myset[2].insert(i);
+	    if(arr[i]%3==0) myset[3].insert(i);
+	    if(arr[i]%5==0) myset[5].insert(i);
 	}
-	fr(int,i,n)
-		cout<<vec[i]<<" ";
-	cout<<"\n";
+	int type,l,r,d,p;
+	while(m--){
+	    cin>>type;
+	    if(type==1){
+	        cin>>l>>r>>p;
+	        l--;r--;
+	        vec del;
+	        auto a=lower_bound(myset[p].begin(),myset[p].end(),l);
+	        for(auto it=a;it!=myset[p].end();it++){
+	            if(*it>r)break;       //since sorted
+	            arr[*it]/=p;
+	            if(arr[*it]%p){
+	                del.pb(*it);
+	            }
+	        }
+	        for(auto i:del){
+	            myset[p].erase(i);
+	        }
+	    }else{
+	        cin>>l>>d;
+	        l--;
+	        if(arr[l]%2==0)myset[2].erase(l);
+	        if(arr[l]%3==0)myset[3].erase(l);
+	        if(arr[l]%5==0)myset[5].erase(l);
+	        
+	        arr[l]=d;
+	        
+	        if(d%2==0) myset[2].insert(l);
+	        if(d%3==0) myset[3].insert(l);
+	        if(d%5==0) myset[5].insert(l);
+	    }
+	}
+	
+	For(i,0,n)cout<<arr[i]<<" ";
+	cout<<endl;
 	return 0;
 }
+
