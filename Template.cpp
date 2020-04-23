@@ -12,6 +12,7 @@ using namespace std;
 #define pq priority_queue <int>
 #define pqr priority_queue <int, vector<int>, greater<int>>
 #define mod 1000000007
+#define pi 3.1415926535897932384626433832795
 #define inf 1e18
 #define ff first
 #define ss second
