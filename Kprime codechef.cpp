@@ -15,7 +15,7 @@ using namespace std;
 #define ff first
 #define ss second
 #define For(i,a,b) for(int i=a;i<b;i++)
-
+#define w(t) int t;cin>>t;while(t--)
 int sieve[100001];
 int ans[6][100001];
 

@@ -17,6 +17,7 @@ using namespace std;
 #define ff first
 #define ss second
 #define For(i,a,b) for(int i=a;i<b;i++)
+#define w(t) int t;cin>>t;while(t--)
 
 //const int fx[]={+1,-1,+0,+0};
 //const int fy[]={+0,+0,+1,-1};
