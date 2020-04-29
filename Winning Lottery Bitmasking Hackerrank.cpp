@@ -60,7 +60,7 @@ int32_t main(){
             }
         }
     }
-    //now case where all digits already there
+    //now case where all digits already there      nC2
     ans+=(cnt[fullmask]*(cnt[fullmask]-1))/2;
     cout<<ans;
     
