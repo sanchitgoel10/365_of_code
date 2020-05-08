@@ -26,6 +26,15 @@ using namespace std;
 //const int fx[]={-2, -2, -1, -1,  1,  1,  2,  2};  // Knights Move
 //const int fy[]={-1,  1, -2,  2, -2,  2, -1,  1}; // Knights Move
 
+// class node{
+//     public:
+//     int data;
+//     node*left;
+//     node*right;
+//     node(int d):data(d),left(NULL),right(NULL){
+//     }
+// };
+
 int32_t main(){
 	FastRead;
 	
