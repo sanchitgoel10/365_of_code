@@ -51,3 +51,27 @@ if the sum S == T, the order to pick numbers from the pool is irrelevant. Whoeve
   // m[key]: memorized game result when pool state = key
   // 0: un-computed; 1: I win; -1: I lose
   int mem[1<<20] = {};
+
+
+
+
+
+  //Concise
+   bool canIWin(int M, int T) {
+      int S = M*(M+1)/2; // sum of entire pool 
+      if(M>=T) return true;
+      if(S < T) return false;
+      if(S==T)  return M%2;
+      unordered_map<int, bool> m;  
+        
+    
+      return  dfs(M,T,0, m);        
+    }
+    
+    bool dfs(int M, int T, int k,unordered_map<int, bool>& m) {
+      if(T<=0)  return false;
+      if(m.count(k) ) return m[k];
+      for (int i = 0; i < M; ++i)
+        if (!(k&1<<i) && !dfs(M, T-i-1, k|1<<i, m)) return m[k] = true;   // current player wins
+      return m[k]= false; // current player can't win
+    }
