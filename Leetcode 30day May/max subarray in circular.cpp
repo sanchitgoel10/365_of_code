@@ -1,36 +1,46 @@
+Intuition
+I guess you know how to solve max subarray sum (without circular).
+If not, you can have a reference here: 53. Maximum Subarray
 
-class Solution {
-public:
-    int maxSubarraySumCircular(vector<int>& v) {
-      int n = v.size();
-      if(n==1)return v[0];
-      vector <int> leftSum(n),leftSumMax(n),rightSum(n), rightSumMax(n);
-      leftSum[0] = v[0];
-      leftSumMax[0] = max((int)0,v[0]);
-      for(int i =1;i<n;i++){
-         leftSum[i] = leftSum[i-1] + v[i];
-         leftSumMax[i] = max(leftSum[i],leftSumMax[i-1]);
-      }
-      rightSum[n-1] = v[n-1];
-      rightSumMax[n-1] = max((int)0,v[n-1]);
-      for(int i =n-2;i>=0;i--){
-         rightSum[i] = rightSum[i+1]+v[i];
-         rightSumMax[i] = max(rightSumMax[i+1],rightSum[i]);
-      }
-      int leftAns=leftSum[0]+rightSumMax[1];
-      for(int i =1;i<n-1;i++){
-         leftAns = max(leftAns,leftSum[i]+rightSumMax[i+1]);
-      }
-      int rightAns = rightSum[n-1]+leftSumMax[n-2];
-      for(int i =n-2;i>=1;i--){
-         rightAns = max(rightAns,rightSum[i]+leftSumMax[i-1]);
-      }
-      int curr=v[0];
-      int kadane = v[0];
-      for(int i =1;i<n;i++){
-         curr = max(v[i],curr+v[i]);
-         kadane = max(curr,kadane);
-      }
-      return max(leftAns,max(rightAns,kadane));
+
+Explanation
+So there are two case.
+
+The first is that the subarray take only a middle part, and we know how to find the max subarray sum.
+The second is that the subarray take a part of head array and a part of tail array.
+We can transfer this case to the first one.
+The maximum result equals to the total sum minus the minimum subarray sum.
+
+Here is a diagram by @motorix:
+image
+
+So the max subarray circular sum equals to
+max(the max subarray sum, the total sum - the min subarray sum)
+
+
+Corner case
+Just one to pay attention:
+If all numbers are negative, maxSum = max(A) and minSum = sum(A).
+In this case, max(maxSum, total - minSum) = 0, which means the sum of an empty subarray.
+According to the deacription, We need to return the max(A), instead of sum of am empty subarray.
+So we return the maxSum to handle this corner case.
+
+
+Complexity
+One pass, time O(N)
+No extra space, space O(1)
+
+
+C++:
+
+    int maxSubarraySumCircular(vector<int>& A) {
+        int total = 0, maxSum = -30000, curMax = 0, minSum = 30000, curMin = 0;
+        for (int a : A) {
+            curMax = max(curMax + a, a);
+            maxSum = max(maxSum, curMax);
+            curMin = min(curMin + a, a);
+            minSum = min(minSum, curMin);
+            total += a;
+        }
+        return maxSum > 0 ? max(maxSum, total - minSum) : maxSum;
     }
-};
