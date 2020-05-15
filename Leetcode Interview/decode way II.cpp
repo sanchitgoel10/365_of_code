@@ -1,4 +1,7 @@
+
+// Iska sol dekhio leetcode pe agar na aaye smj
 public class Solution {
+
     int M = 1000000007;
     public int numDecodings(String s) {
         long[] dp = new long[s.length() + 1];
@@ -12,7 +15,7 @@ public class Solution {
                 else if (s.charAt(i - 1) == '2')
                     dp[i + 1] = (dp[i + 1] + 6 * dp[i - 1]) % M;
                 else if (s.charAt(i - 1) == '*')
-                    dp[i + 1] = (dp[i + 1] + 15 * dp[i - 1]) % M;
+                    dp[i + 1] = (dp[i + 1] + 15 * dp[i - 1]) % M;               
             } else {
                 dp[i + 1] = s.charAt(i) != '0' ? dp[i] : 0;
                 if (s.charAt(i - 1) == '1')
