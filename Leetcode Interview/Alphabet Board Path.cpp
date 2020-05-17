@@ -13,8 +13,8 @@ public:
             auto prev = mp[target[i-1]];
             dx = cur.first - prev.first;
             dy = cur.second - prev.second;
-            if(dy < 0) path += string(-dy, 'L');
-            if(dx < 0) path += string(-dx, 'U');
+            if(dy < 0) path += string(-dy, 'L');           // Y matlab column hai yaha
+            if(dx < 0) path += string(-dx, 'U');           //x rows, U pehele kara hai down se
             if(dy > 0) path += string(dy, 'R');
             if(dx > 0) path += string(dx, 'D');
             path += '!';
