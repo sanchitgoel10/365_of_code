@@ -4,7 +4,7 @@ public:
     vector< vector<int > > dp[20];        //20 isliye hai kyuki max roll 15 given hai
     
     int dfs(int id,int prev,int n,int len,vector<int> &rollmax){
-        if(id>=n)return 1;
+        if(id>=n)return 1;           //last tak koi gadbad nhi hui matlab ek seq genrate ho gayi
         
         if(dp[len][id][prev]!=-1)return dp[len][id][prev];         //len=The len of prev contigous digit roll
                                                                    //id= The ith dice roll
