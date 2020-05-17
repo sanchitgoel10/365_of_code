@@ -37,7 +37,18 @@ using namespace std;
 
 int32_t main(){
 	FastRead;
-	
+
+
+
+
+	// int tc=1;
+	// w(t){
+
+
+
+	// 	cout<<"Case"<<" "<<"#"<<tc<<":"<<" "<<ans<<endl;
+ //        tc++;
+	// }
 	return 0;
 }
 
