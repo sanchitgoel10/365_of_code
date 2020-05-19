@@ -4,7 +4,7 @@ using namespace std;
 class Solution {
 public:
     int MAX_CHAR=26;
-    void sortString(string &str)          //faster than inbuilt sort
+    void sortString(string &str) 
     { 
         int*charCount = new int[MAX_CHAR](); 
 
