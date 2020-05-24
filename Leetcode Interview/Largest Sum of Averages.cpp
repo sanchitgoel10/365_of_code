@@ -57,7 +57,7 @@ public:
             dp[start][k]=(double)(sum[len-1]-sum[start]+a[start])/(len-start);
             return dp[start][k];
         }
-        for(int i=start;i+k<=len;i++){
+        for(int i=start;i+k<=len;i++){        //basically chossing each possible interval in all possible k available.
             dp[start][k]=max(((double)(sum[i]-sum[start]+a[start])/(i-start+1)+solve(sum,k-1,len,i+1,dp,a)),dp[start][k]);
         }
         return dp[start][k];
