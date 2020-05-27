@@ -1,4 +1,4 @@
-Intuition
+/*Intuition
 I guess you know how to solve max subarray sum (without circular).
 If not, you can have a reference here: 53. Maximum Subarray
 
@@ -29,7 +29,7 @@ So we return the maxSum to handle this corner case.
 Complexity
 One pass, time O(N)
 No extra space, space O(1)
-
+*/
 
 C++:
 
