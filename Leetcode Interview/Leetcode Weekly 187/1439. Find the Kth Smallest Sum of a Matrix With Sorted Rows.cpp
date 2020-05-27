@@ -34,7 +34,7 @@ public:
                 for(auto pathSum : row) 
                     nr.push_back(mat[i][j] + pathSum); // all possible path ends at [i,j] by far                    
                             
-            sort(nr.begin(), nr.end());            
+            sort(nr.begin(), nr.end());             
             nr.resize( min(k, int(nr.size())) );
             row=move(nr);                   
         }        
