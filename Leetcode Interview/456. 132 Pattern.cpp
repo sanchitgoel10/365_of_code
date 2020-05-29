@@ -3,6 +3,12 @@
  //Otherwise, we pop numbers in stack and update S2 
  //accordingly.
 
+/*
+eg [3,1,7,6,8,5]
+eg [3,1,7,6,8,2]
+eg [3,1,7,4,8,5]
+*/
+
 class Solution {
 public:
     bool find132pattern(vector<int>& nums) {
@@ -12,7 +18,7 @@ public:
             if (nums[i] < s2)
                 return true;
             
-            while (!stk.empty() && stk.top() < nums[i]) {
+            while (!stk.empty() && stk.top() < nums[i]) {       //s2 just chota s3 se.
                 s2 = stk.top();
                 stk.pop();
             }
