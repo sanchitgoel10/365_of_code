@@ -9,11 +9,11 @@ public:
         int count=0;
         int n=edges.size();
         vector<int> parent(n+1,0);
-        for(int i=1;i<=n;i++){
+        for(int i=1;i<=n;i++){//union find jaisa
             parent[i]=i;
         }
         int i=0;
-        while(count<n-1){                    //idea is form mst //kruskals
+        while(count<n-1){                    //idea is form mst //kruskals     /
             auto e=edges[i];
             int sp=getparent(e[0],parent);
             int dp=getparent(e[1],parent);
