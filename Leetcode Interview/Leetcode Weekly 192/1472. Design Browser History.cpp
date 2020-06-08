@@ -16,7 +16,7 @@ void visit(string url) {
 }
 string back(int steps) {
     while (--steps >= 0 && !h_back.empty()) {
-        h_forward.push(cur);
+        h_forward.push(cur);                     //clear forward history
         cur = h_back.top();
         h_back.pop();
     }
