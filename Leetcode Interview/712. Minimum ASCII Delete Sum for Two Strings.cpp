@@ -3,7 +3,7 @@ public:
     int minimumDeleteSum(string s1, string s2) {
         int n=s1.size();
         int m=s2.size();
-        vector<vector<int>> dp(n+1,vector<int>(m+1,0));
+        vector<vector<int>> dp(n+1,vector<int>(m+1,INT_MAX));
         dp[0][0]=0;
         for(int i=1;i<=n;i++){
             dp[i][0]=dp[i-1][0]+int(s1[i-1]);
@@ -16,7 +16,6 @@ public:
                 if(s1[i-1]==s2[j-1]){
                     dp[i][j]=dp[i-1][j-1];
                 }else{
-                    dp[i][j]=dp[i-1][j-1]+int(s1[i-1])+int(s2[j-1]);
                     dp[i][j]=min(dp[i][j],min(dp[i-1][j]+int(s1[i-1]),dp[i][j-1]+int(s2[j-1])));
                 }
             }
