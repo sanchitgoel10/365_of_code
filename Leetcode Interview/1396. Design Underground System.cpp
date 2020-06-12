@@ -10,7 +10,7 @@ public:
     }
     
     void checkOut(int id, string stationName, int t) {
-        auto& checkIn = checkInMap[id];
+        auto& checkIn = checkInMap[id];                       //you can also erase the entry but not clear in questio but then checkIn variable should not be by reference
         string route = checkIn.first + "_" + stationName;
         checkoutMap[route].first += t - checkIn.second;
         checkoutMap[route].second += 1;
