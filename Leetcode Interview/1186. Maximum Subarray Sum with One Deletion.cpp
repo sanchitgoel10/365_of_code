@@ -45,8 +45,8 @@ int maximumSum(vector<int>& arr) {
         int ans = max( dropped, notDropped );
             
         for ( int i = 2; i < size; i++ ) {
-            dropped = max( notDropped, arr[ i ] + dropped );
-            notDropped = max( notDropped + arr[ i ], arr[ i ] );
+            dropped = max( notDropped, arr[ i ] + dropped );           //max(ab tak dop nhi kiya,drop kar diya tha + current element)
+            notDropped = max( notDropped + arr[ i ], arr[ i ] );       //max(nhi kara drop + current,sirf current)
             ans = max( ans, max( dropped, notDropped ) );
         }
         return ans;
