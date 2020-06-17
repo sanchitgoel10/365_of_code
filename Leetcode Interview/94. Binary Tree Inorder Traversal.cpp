@@ -55,16 +55,16 @@ public:
                 while (pre -> right && pre -> right != root) {
                     pre = pre -> right;
                 }
-                if (!pre -> right) {
+                if (!pre -> right) {                 //hit NUll 
                     pre -> right = root;
-                    root = root -> left;
-                } else {
+                    root = root -> left; 
+                } else {                             //hit the same element hence already traversed left subtree
                     pre -> right = NULL;
                     nodes.push_back(root -> val);
                     root = root -> right;
                 }
             } else {
-                nodes.push_back(root -> val);
+                nodes.push_back(root -> val);    
                 root = root -> right;
             }
         }
