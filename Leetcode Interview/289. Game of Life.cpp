@@ -29,7 +29,7 @@ public:
                     if(x < 0 || x >= board.size() || y < 0 || y >= board[0].size()) {
                         continue;
                     }
-                    if(board[x][y] & 1) {
+                    if(board[x][y] & 1) {          //interacting with the original bit only
                         live++;
                     }
                 }
