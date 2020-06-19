@@ -19,7 +19,7 @@ private:
         return f;
     }
     
-    void nextPermutation(vector<int>& nums) {
+    void nextPermutation(vector<int>& nums) {          //This also takes care of duplicates
         int n = nums.size(), i, j;
         for (i = n - 2; i >= 0; i--) {
             if (nums[i] < nums[i + 1]) {
