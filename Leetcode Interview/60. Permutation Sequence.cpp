@@ -29,7 +29,7 @@ public:
         --k;  //index  0 based karna hai
         for (int i = n; i >= 1; --i) {
             int j = k / f[i - 1];
-            k %= f[i - 1];                   //for further calculations, calculate karke dekh tabhi ayega smj
+            k %= f[i - 1];                   //This is equal to k-=j*f[i-1] (Ki itne elements aage aa gaye hUm)   //for further calculations, calculate karke dekh tabhi ayega smj
             res.push_back(nums[j]);
             nums.erase(nums.begin() + j);    //O(n) operation
         }
