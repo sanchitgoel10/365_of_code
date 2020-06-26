@@ -1,4 +1,4 @@
-//DijKstra's Algorithm
+//DijKstra's Algorithm  can be used as weights are positive
 typedef pair<int, int> pii;
 
 class Solution {
