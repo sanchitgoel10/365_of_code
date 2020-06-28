@@ -1,3 +1,5 @@
+Wrong Completely wrong
+
 //Normal topological doesnt work as it dont take care of the depth,basically choose the course which would open path for many other courses.
 int dfs(vector<vector<int>>& al, vector<int> &depth, int i) {
     if (depth[i] == -1) {
