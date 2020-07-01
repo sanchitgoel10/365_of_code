@@ -1,5 +1,6 @@
 /*
 Below is the Explanation for line 18 basically how to check leaf node in graph
+
 That means that a node is a leaf. Because we have an undirected graph, we duplicate each edge in the adjacency list. So, each leaf has 1 adjacent vertex which is its the parent. But a root doesn't have a parent, so it has an empty adjacency list. It is done for handling these cases in a single statement
 */
 class Solution {
