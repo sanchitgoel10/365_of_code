@@ -1,3 +1,2 @@
-# 365_of_code
-# Competitive Coding 
+# 365_of_code of Coding 
 Trying to achieve consisitency 
