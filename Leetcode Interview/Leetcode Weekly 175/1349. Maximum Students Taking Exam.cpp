@@ -8,7 +8,7 @@ As we all know, integers are stored as binary numbers in the memory but appear a
 
 When doing Bitmasking DP, we are always handling problems like "what is the i-th bit in the state" or "what is the number of valid bits in a state". These problems can be very complicated if we do not handle them properly. I will show some coding tricks below which we can make use of and solve this problem.
 
-We can use (x >> i) & 1 to get i-th bit in state x, where >> is the right shift operation. If we are doing this in an if statement (i.e. to check whether the i-th bit is 1), we can also use x & (1 << i), where the << is the left shift operation.
+/*We can use (x >> i) & 1 to get i-th bit in state x, where >> is the right shift operation. If we are doing this in an if statement (i.e. to check whether the i-th bit is 1), we can also use x & (1 << i), where the << is the left shift operation.
 
 We can use (x & y) == x to check if x is a subset of y. The subset means every state in x could be 1 only if the corresponding state in y is 1.
 
@@ -28,7 +28,7 @@ where mask' is the masking for the (i-1)-th row. To prevent students from cheati
 If these two equation holds and dp[i - 1][mask'] itself is valid, we could then transit from dp[i - 1][mask'] to dp[i][mask] according to the transition function.
 
 And the last question is, how can we compute the number of valid bits in a masking efficiently? In C++, we can simply use the built-in function __builtin_popcount(mask). For other programming languages, we can pre-compute by using count[i] = count[i/2] + (i % 2 == 1) and store them in an array.
-
+*/
 class Solution {
 public:
     int maxStudents(vector<vector<char>>& seats) {
