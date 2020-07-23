@@ -26,14 +26,14 @@ using namespace std;
 //const int fx[8]={-2, -2, -1, -1,  1,  1,  2,  2};  // Knights Move
 //const int fy[8]={-1,  1, -2,  2, -2,  2, -1,  1}; // Knights Move
 
-// class node{
-//     public:
-//     int data;
-//     node*left;
-//     node*right;
-//     node(int d):data(d),left(NULL),right(NULL){
-//     }
-// };
+// struct TreeNode {
+//  *     int val;
+//  *     TreeNode *left;
+//  *     TreeNode *right;
+//  *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+//  *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+//  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+//  * };
 
 // * struct ListNode {
 //  *     int val;
