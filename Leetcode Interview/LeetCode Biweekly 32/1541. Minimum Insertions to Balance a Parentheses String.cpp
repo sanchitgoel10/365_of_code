@@ -1,3 +1,4 @@
+/*
 We keep 2 variables, ans A counter for manual addition brackets and req Number of closing brackets that we need .
 We start iterating over the string elements one by one. Now:-
 1. We get an open bracket
@@ -16,7 +17,7 @@ req++ => Another closed bracket is required as we have ()
 Otherwise, we directly reduce the number of required closed brackets.
 req--
 Code: - (C++ O(n))
-
+*/
 class Solution {
 public:
    int minInsertions(string s) {
