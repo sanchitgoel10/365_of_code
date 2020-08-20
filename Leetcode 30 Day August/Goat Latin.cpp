@@ -9,7 +9,7 @@ string toGoatLatin(string S) {
         }
         return res.substr(1);
     }
-
+//Mera tatti sol
 class Solution {
 public:
     string toGoatLatin(string S) {
