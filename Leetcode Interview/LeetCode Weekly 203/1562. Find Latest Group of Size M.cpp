@@ -29,3 +29,53 @@ public:
         return ans;
     }
 };
+
+//Union find
+class Solution {
+public:
+    vector<int> arr;
+    vector<int> group;
+    unordered_map<int, int> gz;
+    int find(int x) {
+        if(arr[x] != 0) {
+            if(arr[x] == x) return x;
+            arr[x] = find(arr[x]);
+            return arr[x];
+        }
+        ++group[1];
+        gz[x] = 1;
+        arr[x] = x;
+        return x;
+    }
+    
+    void combine(int a, int b) {
+        a = find(a); b = find(b);
+        if(a != b) {
+            --group[gz[a]];
+            --group[gz[b]];
+            ++group[gz[a] + gz[b]];
+            gz[a] += gz[b];
+            arr[b] = a;
+            gz.erase(b);
+        }
+    }
+    
+    int findLatestStep(vector<int>& arr1, int m) {
+        arr.resize(100001);
+        group.resize(100001);
+        int ans = -1;
+        int idx = 1;
+        for(auto n : arr1) {
+            find(n);
+            if(n < arr1.size() && arr[n + 1]) {
+                combine(n, n + 1);
+            }
+            if(n > 0 && arr[n - 1])
+                combine(n, n - 1);
+            if(group[m])
+                ans = idx;
+            ++idx;
+        }
+        return ans;
+    }
+};
