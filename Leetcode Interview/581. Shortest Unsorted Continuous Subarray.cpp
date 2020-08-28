@@ -33,7 +33,6 @@ and min so far from the right;
  * maxl:   2  6  6  8  10 10  15
  *         -------------------->
  */
-*/
 class Solution {
 public:
     int findUnsortedSubarray(vector<int>& nums) {
